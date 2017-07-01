@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>360浏览器</title>
+    <link rel="stylesheet" href="css/jquery.fullpage.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/jquery-1.12.4.min.js"></script>
+    <script src="js/jquery.fullpage.min.js"></script>
+    <script>
+        $(function () {
+            $("#box").fullpage({
+                //给每一个屏幕设置一个背景颜色
+                sectionsColor:['#0DA5D6','#2AB561','#DE8910','#16BA9D','#0DA5D6'],
+                verticalCentered:false,
+                navigation:true,
+                anchors: ['p1', 'p2', 'p3', 'p4','p5'],
+                menu: '#menu',
+                afterLoad:function(anchorLink, index){
+                    $(".section").eq(index - 1).addClass("current").siblings().removeClass("current");
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<!-- 页面结构 -->
+<div id="box">
+    <!--每一个class为section的div都是一屏,section这个类是固定的-->
+    <!--第一屏-->
+    <div class="section one">
+        <div class="logo"></div>
+        <div class="text">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="intro"></div>
+    </div>
+    <!--第二屏-->
+    <div class="section two">
+        <div class="twoLeft">
+            <img src="images/shield_1.png" alt="">
+            <img src="images/shield_2.png" alt="">
+            <img src="images/shield_3.png" alt="">
+            <img src="images/shield_4.png" alt="">
+            <img src="images/shield_5.png" alt="">
+            <img src="images/shield_6.png" alt="">
+            <img src="images/shield_7.png" alt="">
+            <img src="images/shield_8.png" alt="">
+            <img src="images/shield_9.png" alt="">
+        </div>
+        <div class="twoRight"></div>
+    </div>
+    <!-- 第三屏 -->
+    <div class="section three">
+        <div class="info"></div>
+        <div class="circle"></div>
+        <div class="rocket"></div>
+    </div>
+    <!--第四屏-->
+    <div class="section four">
+        <div class="content">
+            <div class="search"></div>
+            <div class="keyword"></div>
+            <div class="result"></div>
+        </div>
+        <div class="info"></div>
+    </div>
+    <!--第五屏-->
+    <div class="section five">
+        <div class="info"></div>
+        <div class="browse">
+            <!--四条线-->
+            <div class="lineTop"></div>
+            <div class="lineBottom"></div>
+            <div class="lineLeft"></div>
+            <div class="lineRight"></div>
+            <!--内部的元素-->
+            <div class="toolBar"></div>
+            <div class="smBox"></div>
+            <div class="extra"></div>
+            <div class="b_bot"></div>
+        </div>
+    </div>
+</div>
+<ul id="menu">
+    <li data-menuanchor="p1" class="active"><a href="#p1">page1</a></li>
+    <li data-menuanchor="p2"><a href="#p2">page2</a></li>
+    <li data-menuanchor="p3"><a href="#p3">page3</a></li>
+    <li data-menuanchor="p4"><a href="#p4">page4</a></li>
+    <li data-menuanchor="p5"><a href="#p5">page5</a></li>
+</ul>
+</body>
+</html>

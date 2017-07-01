@@ -1,0 +1,336 @@
+/*初始化样式*/
+*{
+    padding:0;
+    margin:0;
+}
+/*头部导航栏*/
+#menu {
+    position: fixed;
+    display: flex;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    list-style-type: none;
+    z-index: 70;
+}
+#menu li {
+    font-size: 14px;
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border-right: 1px solid #2b2b2b;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 30px;
+}
+#menu a {
+    display: inline-block;
+    background-color: rgba(0,0,0,.6);
+    width: 100%;
+    height: 100%;
+    color: #FFF;
+    text-decoration: none;
+}
+#menu .active a {
+    color: #fff;
+    background-color: rgba(0,12,0,.9);
+}
+.section{
+    position: relative;
+}
+/*第一屏的样式 B */
+.one .logo{
+    margin:0 auto;
+    transform: translateY(50%);
+    width: 247px;
+    height: 185px;
+    background: url("../images/p1.png") no-repeat -254px 0;
+}
+.one .text{
+    position: absolute;
+    width: 100%;
+    top: 330px;
+    left:0;
+    text-align: center;
+}
+.one .text span{
+    display: inline-block;
+    width: 90px;
+    height: 90px;
+    background: url("../images/p1.png") no-repeat -4px -203px;
+    margin:0 20px;
+    opacity: 0;
+    transition: all 2s;
+}
+.one .text span:nth-child(1){
+    width: 63px;
+}
+.one .text span:nth-child(2){
+    background-position-x: -75px;
+}
+.one .text span:nth-child(3){
+    background-position-x: -179px;
+}
+.one .text span:nth-child(4){
+    background-position-x: -275px;
+}
+.one .text span:nth-child(5){
+    background-position-x: -378px;
+}
+.one .text span:nth-child(6){
+    background-position-x: -479px;
+}
+.one .text span:nth-child(7){
+    background-position-x: -573px;
+}
+.one .text span:nth-child(8){
+    background-position-x: -677px;
+}
+.one .intro{
+    position: absolute;
+    top: 480px;
+    left:50%;
+    width: 772px;
+    height: 49px;
+    background: url("../images/p1.png") no-repeat 0 -347px;
+    transform: translateX(-50%);
+}
+.one.current .text span{
+    margin: 0 8px;
+    opacity: 1;
+}
+
+/*第二屏的样式*/
+.two .twoLeft{
+    position: absolute;
+    width: 420px;
+    top:50%;
+    left:50%;
+    transform: translate(-130%,-50%);
+}
+.two .twoLeft img:nth-child(1){
+    transform: translate(630px,190px) rotate(80deg);
+}
+.two .twoLeft img:nth-child(2){
+    transform: translate(430px,300px) rotate(260deg);
+}
+.two .twoLeft img:nth-child(3){
+    transform: translate(730px,-50px) rotate(140deg);
+}
+.two .twoLeft img:nth-child(4){
+    transform: translate(-100px,300px) rotate(160deg);
+}
+.two .twoLeft img:nth-child(5){
+    transform: translate(-530px,-30px) rotate(1200deg);
+}
+.two .twoLeft img:nth-child(6){
+    transform: translate(830px,360px) rotate(-460deg);
+}
+.two.current .twoLeft img{
+    transform: none;
+    transition: transform 2s;
+}
+.two .twoRight{
+    position: absolute;
+    width: 635px;
+    height: 309px;
+    background: url("../images/p2.png") no-repeat;
+    top:50%;
+    left:50%;
+    transform: translate(-10%,-50%);
+}
+
+/*第三屏样式*/
+.three .info{
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translate(-100%,-50%);
+    width: 631px;
+    height: 278px;
+    background: url("../images/info_3.png") no-repeat;
+}
+.three .circle{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 453px;
+    height: 449px;
+    background: url("../images/circle.png") no-repeat;
+    transform: translate(10%,-50%);
+}
+.three .rocket{
+    position: absolute;
+    top:100%;
+    left:30%;
+    width: 203px;
+    height: 204px;
+    background: url("../images/rocket.png") no-repeat;
+}
+.three.current .rocket{
+    top:50%;
+    left:50%;
+    transform: translate(80%,-50%);
+    transition: all 1s ease-in-out;
+}
+/*第四屏的样式*/
+.four{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.four .content{
+    width: 529px;
+    height: 450px;
+    position: relative;
+}
+.four .content .search{
+    width: 529px;
+    height: 66px;
+    background: url("../images/search.png") no-repeat;
+    transform: translate(-150%);
+}
+.four .content .keyword{
+    position: absolute;
+    top: 22px;
+    left: 20px;
+    width: 0;
+    height: 22px;
+    background: url("../images/key.png") no-repeat;
+}
+.four .content .result{
+    position: absolute;
+    top: 54px;
+    width: 529px;
+    height: 0;
+    background: url("../images/result.png") no-repeat;
+}
+.four .info{
+    width: 612px;
+    height: 299px;
+    background: url("../images/info_4.png") no-repeat;
+}
+/*第四屏动画*/
+.four.current .content .search{
+    transform: none;
+    transition: transform 1s;
+}
+.four.current .content .keyword{
+    width: 99px;
+    transition: width 2s 1s;
+}
+.four.current .content .result{
+    height: 372px;
+    transition:height 1s 2s;
+}
+
+/*第五屏样式*/
+.five .info{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 1077px;
+    height: 134px;
+    background: url("../images/info_5.png") no-repeat;
+    transform: translate(-50%,-210%);
+}
+.five .browse{
+    position: absolute;
+    top:50%;
+    left:50%;
+    width: 1004px;
+    height: 444px;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0);
+    transform: translate(-50%,-30%);
+}
+.five .lineTop,
+.five .lineBottom{
+    position: absolute;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+}
+.five .lineTop{
+    transform: translateX(-150%);
+}
+.five .lineBottom{
+    bottom:0;
+    transform: translateX(150%);
+}
+.five .lineLeft,
+.five .lineRight{
+    position: absolute;
+    height: 100%;
+    width: 1px;
+    background-color: #fff;
+}
+.five .lineLeft{
+    transform: translateY(150%);
+}
+.five .lineRight{
+    right:0;
+    transform: translateY(-150%);
+}
+/*内部元素*/
+.five .toolBar{
+    position: absolute;
+    top:0;
+    left:0;
+    width: 0;
+    height: 79px;
+    background: url("../images/toolbar.png") no-repeat;
+}
+.five .smBox{
+    position: absolute;
+    top: 30px;
+    left:75px;
+    width: 0;
+    height: 26px;
+    border:0px solid #fff;
+}
+.five .extra{
+    position: absolute;
+    bottom: 0;
+    right:0;
+    width: 0;
+    height: 29px;
+    background: url("../images/extra.png") no-repeat;
+}
+.five .b_bot{
+    position: absolute;
+    bottom: 30px;
+    left:0;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255,255,255,1);
+    transform: translate(100%) rotate(360deg);
+}
+/*第五屏动画*/
+.five.current div[class^=line]{
+    transform: none;
+    transition: transform 2s ease-in-out;
+}
+.five.current .browse{
+    background-color: rgba(255, 255, 255, .3);
+    transition: background-color 2s;
+}
+.five.current .toolBar{
+    width: 1004px;
+    transition: all 1s 1s;
+}
+.five.current .smBox{
+    width: 910px;
+    border:1px solid #fff;
+    transition: all 1s 1s;
+}
+.five.current .extra{
+    width: 394px;
+    transition: all 1s 1s;
+}
+.five.current .b_bot{
+    transform: none;
+    transition: all 1s 1s;
+}
